@@ -1,7 +1,30 @@
-import logo from '../assets/logo.png';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../api/firebase";
 
 export const AuthLayout = () => {
+  const [email, setEmail] = useState(""); // email ve passwordu state'de tutuyorum
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // ✅ formun sayfayı yenilemesini engelle
+    try {
+      //firebase email fonksiyonunu çağırıp içerisine atadığım verilerle çağırıyorum
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("Giriş Başarılı ✅:", userCredential.user);
+      navigate("/dashboard"); // ✅ giriş başarılı olursa yönlendir
+    } catch (error) {
+      console.log("Giriş Hatası ❌:", error.message);
+      alert("E-posta veya şifre hatalı!");
+    }
+  };
+
   const navigate = useNavigate();
 
   return (
@@ -11,23 +34,31 @@ export const AuthLayout = () => {
           <img src={logo} alt="Logo" className="h-16 w-auto mb-4" />
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
-            <label className="block text-sm font-medium text-[#151212] mb-1">E-posta</label>
+            <label className="block text-sm font-medium text-[#151212] mb-1">
+              E-posta
+            </label>
             <input
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} //bunun ne işe yaradığını anlmadım bu olmazsa inputa değer giremiyorum
               required
-              placeholder="ornek@mail.com"
+              placeholder="info@iqmoney.com.tr"
               className="w-full px-4 py-2 rounded-lg border border-gray-300/30 bg-white/20 text-[#151212] placeholder-gray-300 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#151212] mb-1">Şifre</label>
+            <label className="block text-sm font-medium text-[#151212] mb-1">
+              Şifre
+            </label>
             <input
               name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="••••••••"
               className="w-full px-4 py-2 rounded-lg border border-gray-300/30 bg-white/20 text-[#151212] placeholder-gray-300 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition"
@@ -36,7 +67,10 @@ export const AuthLayout = () => {
 
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 text-[#151212]">
-              <input type="checkbox" className="h-4 w-4 text-orange-400 rounded" />
+              <input
+                type="checkbox"
+                className="h-4 w-4 text-orange-400 rounded"
+              />
               <span>Beni hatırla</span>
             </label>
             <a href="#" className="text-orange-400 hover:underline">
@@ -47,14 +81,13 @@ export const AuthLayout = () => {
           <button
             type="submit"
             className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition"
-            onClick={() => navigate('/dashboard')}
           >
             Giriş Yap
           </button>
         </form>
 
         <p className="text-center text-sm text-[#151212] mt-6">
-          Hesabın yok mu?{' '}
+          Hesabın yok mu?{" "}
           <a href="#" className="font-medium text-orange-400 hover:underline">
             Kayıt ol
           </a>
