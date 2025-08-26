@@ -4,6 +4,7 @@ import { AuthLayout } from '../layouts/AuthLayout';
 import { AppLayout } from '../layouts/AppLayout';
 import { Dashboard } from '../pages/dashboard/index';
 import { NotFound } from '../pages/NotFound';
+import { Card } from '../pages/Card';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,10 @@ const router = createBrowserRouter([
   },
   {
     element: <AppLayout />,
-    children: [{ path: '/dashboard', element: <Dashboard /> }],
+    children: [
+      { path: '/dashboard', element: <Dashboard /> },
+      { path: '/card', element: <Card /> },
+    ],
   },
   { path: '*', element: <NotFound /> },
 ]);

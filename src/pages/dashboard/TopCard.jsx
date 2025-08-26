@@ -6,7 +6,7 @@ import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 
 export const TopCard = ({ onSaved }) => {
   return (
-    <div className="w-full flex justify-between mb-8">
+    <div className="w-full flex justify-between mb-8 h-[10%]">
       <div className="top-card flex items-center justify-between rounded-xl  bg-neutral-100 px-3 w-1/5 py-6 mr-4">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">BTC</p>

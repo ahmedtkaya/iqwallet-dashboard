@@ -149,7 +149,7 @@ export const AscendingGraph = () => {
 
         <div className="relative mt-4 overflow-hidden rounded-xl bg-gradient-to-b from-gray-50 to-white">
           <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-6 bg-gradient-to-b from-white to-transparent" />
-          <Chart type="area" height={230} options={options} series={[{ data: seriesMap[range] }]} />
+          <Chart type="area" height={225} options={options} series={[{ data: seriesMap[range] }]} />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-10 bg-gradient-to-t from-white to-transparent" />
         </div>
       </div>
@@ -229,7 +229,7 @@ export const AscendingGraph = () => {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-6 bg-gradient-to-b from-white to-transparent" />
           <Chart
             type="area"
-            height={230}
+            height={225}
             options={optionsDown}
             // ⬇️ burası rangeDecreasing olmalı
             series={[{ data: seriesMap[rangeDecreasing].slice().reverse() }]}
