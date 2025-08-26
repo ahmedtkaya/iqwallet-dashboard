@@ -1,15 +1,20 @@
 // src/pages/dashboard/index.jsx
-import { useState } from 'react';
-import DashboardList from './DashboardList';
+import { AscendingGraph } from './AscendingGraph';
+import { EarningsCard } from './EarningsCard';
 import { TopCard } from './TopCard';
 
 export function Dashboard() {
-  const [refreshAt, setRefreshAt] = useState(0);
-
   return (
-    <div className="pl-10 w-full">
-      <TopCard onSaved={() => setRefreshAt(Date.now())} />
-      <DashboardList refreshAt={refreshAt} />
+    <div className="pl-10 w-full min-h-[85vh] flex flex-col">
+      <TopCard />
+      <div className="flex">
+        <div className="bottom-left w-[60%] flex flex-col h-full">
+          <AscendingGraph />
+        </div>
+        <div className="w-[40%]">
+          <EarningsCard></EarningsCard>
+        </div>
+      </div>
     </div>
   );
 }

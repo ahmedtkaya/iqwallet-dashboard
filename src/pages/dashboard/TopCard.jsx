@@ -7,7 +7,7 @@ import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 export const TopCard = ({ onSaved }) => {
   return (
     <div className="w-full flex justify-between mb-8">
-      <div className="top-card flex items-center justify-between rounded-xl  bg-white px-3 w-1/5 py-6 mr-4">
+      <div className="top-card flex items-center justify-between rounded-xl  bg-neutral-100 px-3 w-1/5 py-6 mr-4">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">BTC</p>
           <span className="text-base font-bold">$1200.5</span>
@@ -16,7 +16,7 @@ export const TopCard = ({ onSaved }) => {
           <CurrencyBitcoinIcon className="text-white text-[18px] drop-shadow" />
         </div>
       </div>
-      <div className="top-card flex items-center justify-between rounded-xl bg-white px-3 w-1/5 py-6 mr-2">
+      <div className="top-card flex items-center justify-between rounded-xl bg-neutral-100 px-3 w-1/5 py-6 mr-2">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">USD</p>
           <span className="text-base font-bold">$0.00</span>
@@ -26,7 +26,7 @@ export const TopCard = ({ onSaved }) => {
         </div>
       </div>
 
-      <div className="top-card flex items-center justify-between rounded-xl bg-white px-3 w-1/5 py-6 mr-2">
+      <div className="top-card flex items-center justify-between rounded-xl bg-neutral-100 px-3 w-1/5 py-6 mr-2">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">EUR</p>
           <span className="text-base font-bold">€0.00</span>
@@ -36,7 +36,7 @@ export const TopCard = ({ onSaved }) => {
         </div>
       </div>
 
-      <div className="top-card flex items-center justify-between rounded-xl bg-white px-3 w-1/5 py-6 mr-2">
+      <div className="top-card flex items-center justify-between rounded-xl bg-neutral-100 px-3 w-1/5 py-6 mr-2">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">TRY</p>
           <span className="text-base font-bold">₺0.00</span>
@@ -46,7 +46,7 @@ export const TopCard = ({ onSaved }) => {
         </div>
       </div>
 
-      <div className="top-card flex items-center justify-between rounded-xl bg-white px-3 w-1/5 py-6 mr-2">
+      <div className="top-card flex items-center justify-between rounded-xl bg-neutral-100 px-3 w-1/5 py-6">
         <div className="leading-tight">
           <p className="text-xs text-neutral-500">ETH</p>
           <span className="text-base font-bold">Ξ0.00</span>
