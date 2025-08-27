@@ -42,7 +42,7 @@ export const Sidebar = () => {
 
           {/* Diğerleri – route ekleyince çalışır */}
           <NavLink
-            to="/reports"
+            to="/users-table"
             className={({ isActive }) => `${btnBase} rounded-xl ${isActive ? active : inactive}`}
           >
             <BarChart3 className="w-5 h-5" />
