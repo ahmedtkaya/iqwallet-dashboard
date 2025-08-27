@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../api/firebase"; // kendi firebase config dosyana göre import et
 
-export const ProfileCard = ({
-  name = "Carlic Bolomboy",
-  email = "carlic@gmai.com",
-  avatarSrc = "",
-}) => {
+export const ProfileCard = ({ name = "Genel Veriler", avatarSrc = "" }) => {
   const [users, setUsers] = useState(0);
   const [wallets, setWallets] = useState(0);
   const [transactions, setTransactions] = useState(0);
@@ -46,7 +42,6 @@ export const ProfileCard = ({
         )}
 
         <h3 className="mt-3 text-lg font-semibold text-gray-900">{name}</h3>
-        <p className="text-sm text-gray-500">{email}</p>
       </div>
 
       <div className="mt-4 border-t border-gray-200 pt-4">
