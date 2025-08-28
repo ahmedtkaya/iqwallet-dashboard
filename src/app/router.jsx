@@ -6,6 +6,7 @@ import { Dashboard } from '../pages/dashboard/index';
 import { NotFound } from '../pages/NotFound';
 import { Card } from '../pages/Card';
 import { Users } from '../pages/users/index';
+import { Transaction } from '../pages/Transaction';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: '/dashboard', element: <Dashboard /> },
       { path: '/card', element: <Card /> },
       { path: '/users', element: <Users /> },
+      { path: '/transaction', element: <Transaction /> },
     ],
   },
   { path: '*', element: <NotFound /> },
