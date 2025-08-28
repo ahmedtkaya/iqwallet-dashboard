@@ -17,7 +17,7 @@ const active = 'bg-[#ff6b00] text-white ring-1 ring-black/10';
 
 export const Sidebar = () => {
   return (
-    <div className="min-h-[82vh]">
+    <div className="min-h-[79vh]">
       <div className="h-full w-14 rounded-full bg-neutral-100 border border-neutral-200 flex flex-col items-center justify-between py-3">
         <nav className="flex flex-col items-center gap-4">
           {/* Dashboard */}
@@ -42,7 +42,7 @@ export const Sidebar = () => {
 
           {/* Diğerleri – route ekleyince çalışır */}
           <NavLink
-            to="/users-table"
+            to="/transaction"
             className={({ isActive }) => `${btnBase} rounded-xl ${isActive ? active : inactive}`}
           >
             <BarChart3 className="w-5 h-5" />

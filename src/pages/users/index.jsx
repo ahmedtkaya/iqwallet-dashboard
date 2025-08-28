@@ -10,7 +10,7 @@ export const Users = () => {
 
   return (
     <div className="pl-10 w-full">
-      <div className="min-h-[82vh] rounded-2xl bg-neutral-100 p-4 shadow-sm">
+      <div className="min-h-[79vh] rounded-2xl bg-neutral-100 p-4 shadow-sm">
         <div className="mb-3 flex items-center justify-between">
           <Filter onFilter={handleFilter} />
           <span className="text-xs text-gray-500">{count} records</span>
